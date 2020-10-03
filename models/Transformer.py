@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras import layers, Model
-from nlp_lab.layers import EncoderLayer, DecoderLayer
+from nlp_lab.layers import EncoderLayer, DecoderLayer, positional_encoding
 
 
 class Encoder(Model):
