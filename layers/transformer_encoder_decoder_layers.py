@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras import layers, Sequential
 from .multihead_attention import MultiHeadAttention
+from nlp_lab.layers import positional_encoding
 
 
 
