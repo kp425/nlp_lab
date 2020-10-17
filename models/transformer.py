@@ -3,7 +3,7 @@ from tensorflow.keras import layers, Model
 from nlp_lab.layers import EncoderLayer, DecoderLayer, positional_encoding
 
 
-class Encoder(Model):
+class Encoder(layers.Layer):
     def __init__(self, num_layers, d_model, num_heads, dff, input_vocab_size,
                maximum_position_encoding, rate=0.1):
         super(Encoder, self).__init__()
@@ -31,7 +31,7 @@ class Encoder(Model):
         return x  
 
 
-class Decoder(Model):
+class Decoder(layers.Layer):
     def __init__(self, num_layers, d_model, num_heads, dff, target_vocab_size,
                maximum_position_encoding, rate=0.1):
         super(Decoder, self).__init__()
