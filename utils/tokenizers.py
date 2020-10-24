@@ -26,8 +26,14 @@ class Tokenizer(ABC):
         self.id2vocab = dict((v,k) for k,v in self.vocab2id.items())
         self.vocab_size = count
   
-    def encode(self, list_of_words):
-        return [self.vocab2id[i] for i in list_of_words]
+    def encode(self, list_of_tokens):
+        enc_seq = []
+        for tkn in list_of_tokens:
+            if tkn not in self.vocab2id:
+                enc_seq.append(self.vocab2id['<oov_token>'])
+            else:
+                enc_seq.append(self.vocab2id[tkn])
+        return enc_seq
     
     def decode(self, list_of_ints):
         return ''.join([self.id2vocab[i] for i in list_of_ints])
