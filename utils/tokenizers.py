@@ -35,8 +35,8 @@ class Tokenizer(ABC):
                 enc_seq.append(self.vocab2id[tkn])
         return enc_seq
     
-    def decode(self, list_of_ints):
-        return ''.join([self.id2vocab[i] for i in list_of_ints])
+    def decode(self, list_of_ids):
+        return ''.join([self.id2vocab[i] for i in list_of_ids])
     
     def __getitem__(self, key):
         if type(key)==str:
